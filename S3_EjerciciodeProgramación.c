@@ -13,7 +13,15 @@ int main(){
         printf("\n-----Estuadiante %d -----\n", i+1);
         for (int j=0; j<asignatura; j++){
             printf("Ingrese la nota de la asignatura %d:",j+1);
-            scanf("%f", &notas[i][j]);
+            do {
+                printf("Ingrese la nota de la asignatura %d (0-10):",j+1);
+                scanf("%f", &notas[i][j]);
+                if(notas[i][j] < 0 || notas[i][j] > 10){
+                    printf("Nota invalida. Debe ser de 0-10.\n");
+                }
+            } while(notas[i][j]<0 || notas [i][j] >10);
+            
+
         }
     }
 
