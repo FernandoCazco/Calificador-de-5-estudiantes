@@ -12,7 +12,6 @@ int main(){
     for (int i = 0;i< estudiantes; i++){
         printf("\n-----Estuadiante %d -----\n", i+1);
         for (int j=0; j<asignatura; j++){
-            printf("Ingrese la nota de la asignatura %d:",j+1);
             do {
                 printf("Ingrese la nota de la asignatura %d (0-10):",j+1);
                 scanf("%f", &notas[i][j]);
@@ -34,6 +33,19 @@ int main(){
         }
         float promedio = suma / asignatura;
         printf("Estudiante %d: %.2f\n", i+1, promedio);
+    }
+    
+    printf("\n|-----Promedio por Asignatura-----|\n");
+    for (int j = 0; j < asignatura; j++)
+    {
+        float suma = 0;
+        for (int i = 0; i < estudiantes; i++)
+        {
+            suma += notas[i][j];
+        }
+        float promedio = suma / estudiantes;
+        printf("Asignatura %d: %.2f\n", j+1, promedio);
+        
     }
     
 
