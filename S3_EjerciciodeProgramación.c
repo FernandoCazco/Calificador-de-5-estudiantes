@@ -47,6 +47,22 @@ int main(){
         printf("Asignatura %d: %.2f\n", j+1, promedio);
         
     }
+    printf("\n|-----Nota mas alta y mas baja por estudiante-----|\n");
+    for (int i = 0; i < estudiantes; i++)
+    {
+        float alta = notas[i][0];
+        float baja = notas[i][0];
+        for (int j = 1; j < asignatura;j++)
+        {
+            if(notas[i][j]>alta){
+                alta = notas[i][j];
+            }
+            if(notas[i][j]< baja){
+                baja = notas [i][j];
+            }
+        }
+        printf("Estudiant %d - Alta: %.2f | Baja: %.2f\n",i+1, alta,baja );
+    }
     
 
     return 0;
