@@ -89,6 +89,26 @@ int main(){
         printf("Estudiant %d - Alta: %.2f | Baja: %.2f\n",i+1, alta,baja );
     }
     
+    printf("\n|-----Aprobados y Reprobados por Asignatura-----|");
+    for (int j = 0;j < asignatura; j++)
+    {
+        int aprobado = 0;
+        int reprobado = 0;
+        for (int i = 0; i < estudiantes; i++)
+        {
+            if (notas[i][j] >= 6)
+            {
+                aprobado++;
+            }else {
+                reprobado++;
+            }
+            
+        }
+        printf("Asignatura %d - aprobados: %d | Reprobados: %d\n", j+1, aprobado, reprobado);
+         
+    
+    }
+    
 
     return 0;
 }
